@@ -1,0 +1,9 @@
+#Tomcat Server
+server: 
+  port: 8080
+  
+spring: 
+  datasource:
+    url: jdbc:mysql://localhost:3306/manageMy$db
+    username: root
+    password: rootpass

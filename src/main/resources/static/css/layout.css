@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+:root{
+	--color-1: #CFF5E7;
+	--color-2: #A0E4CB;
+	--color-3: #59C1BD;
+	--color-4: #0D4C92;
+  --white: #ffffff;
+}
+
+
+
+body {
+	background-color: var(--color-3);
+}
+
+form{
+	padding: 20px;
+	width: 35%;
+	height: 100%;
+	margin: 3% auto;
+	background-color: var(--white);
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.btn {
+	background-color: var(--color-4);
+	color: var(--white);
+}
+
+form a {
+	display: block;
+	text-align: center;
+	text-decoration: underline;
+	margin: 1rem;
+}
