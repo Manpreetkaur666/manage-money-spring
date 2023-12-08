@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="../static/css/layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+<title>Insert title here</title>
+</head>
+<body>
+<div th:fragment="header" class="sidebar">
+	<a class="active" href="#addfee">Add Fee</a>
+  <a href="#search">Search Record</a>
+  <a href="#edit">Edit Courses</a>
+  <a href="#courselist">Course List</a>
+  <a href="#viewrecords">View All Records</a>
+  <a href="#back">Back</a>
+  <a href="#logout">Logout</a>
+</div>
+</body>
+</html>

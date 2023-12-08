@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +16,10 @@
 		<h3>Branch of College</h3>
 	</div>
 	<div class="home-section h-75 w-100 p-5 row justify-content-around text-center" >
-		<a class="border p-5 mx-2 my-4 col-3">
+		<a class="border p-5 mx-2 my-4 col-3" href="/addfee">
 			<img class="home-icon m-3" th:src="@{/img/home/add-icon.svg}" />
 			Add Fees</a>
-		<a class="border p-5 mx-2 my-4 col-3">
+		<a class="border p-5 mx-2 my-4 col-3" href="/search">
 			<img class="home-icon m-3" th:src="@{/img/home/search.svg}" />
 			Search Record</a>
 		<a class="border p-5 mx-2 my-4 col-3">

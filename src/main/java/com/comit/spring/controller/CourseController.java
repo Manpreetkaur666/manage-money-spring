@@ -4,12 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class CourseController {
 
-	@GetMapping("/home")
+	@GetMapping("/report")
 	String show() {
-		System.out.println("Showing Home Page");
+		System.out.println("Showing Report Page");
 		
-		return "home";
+		return "search_report";
 	}
 }

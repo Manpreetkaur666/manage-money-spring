@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="../static/css/layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+<title>Insert title here</title>
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+<div class="content">
+	<div id="addfee">
+	<h1 class="text-center py-4">Add Fees</h1>
+	<div>
+		<form th:action="@{/addfee}" th:object="${fee}" method="post">
+		
+		
+		<div class="input-section">
+			<label>Date</label> 
+			<input type="date" field="*{date}" name="date" required  />		
+		</div>
+		
+		<div class="input-section">
+			<label>Receipt No.</label> 
+			<input type="number" field="*{receiptNo}" name="receiptNo" required />		
+		</div>
+		
+		<div class="input-section">
+			<label>Student Id</label> 
+			<input type="number" field="*{studId}" name="studId" required />		
+		</div>
+		
+		<div class="input-section">
+			<label>Student Fullname</label>
+			<input type="text" field="*{studName}" name="studName" />
+		</div>
+		
+		<div class="input-section">
+			<label>Mode of Payment</label> 
+		<div class="custom-select d-inline" style="width:200px;">
+		  <select field="*{paymentMode}" name="paymentMode" required>
+		    <option value="Cash">Cash</option>
+		    <option value="Credit Card">Credit Card</option>
+		    <option value="Debit Card">Debit card</option>
+		    <option value="Cheque">Cheque</option>
+		  </select>
+		</div>
+		</div>
+		
+		<div class="input-section">
+			<label>Payment Year</label> 
+			<input type="number" field="*{paymentYearFrom}" name="paymentYearFrom" required /> 
+			- 
+			<input type="number" field="*{paymentYearTo}" name="paymentYearTo" required />
+		</div>
+		
+		<div class="input-section">
+			<label>Course</label> 
+		<div class="custom-select d-inline" style="width:200px;">
+		  <select field="*{course}" name="course" required>
+		    <option value="JAVA">JAVA</option>
+		    <option value="Javascript">Javascript</option>
+		    <option value="Pyton">Python</option>
+		    <option value="Swift">Swift</option>
+		  </select>
+		</div>
+		</div>
+		
+		<div class="input-section">
+			<label>Total</label>
+			<input type="number" field="*{total}" name="total" required />
+		</div>
+		
+		<div class="input-section">
+			<label>Remark</label>
+			<input type="text" field="*{remark}" name="remark" />
+		</div>
+		
+		<div class="submit-btn" >
+			<button>Add Fees</button>
+		</div>
+	</form>
+	</div>
+	</div>
+		
+</div>
+</body>
+</html>

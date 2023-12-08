@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="../static/css/layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+<title>Insert title here</title>
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+<div class="content">
+	<div id="search">
+		<h1 class="text-center py-4">Search Record</h1>
+		<div class="search-section">
+			<label>Enter Receipt No.</label>
+			<input></input>
+			<button>Search</button>
+		</div>
+		
+		<div class="input-section">
+			<label>Receipt No.</label>
+			<label></label>
+		</div>
+		
+		<div class="input-section">
+			<label>Payment Mode</label>
+			<label></label>
+		</div>
+		
+		<div class="input-section">
+			<label>Date</label>
+			<label></label>
+		</div>
+		
+		<div class="input-section">
+			<label>Sender</label>
+			<label></label>
+		</div>
+		
+		<div class="input-section">
+			<label>Course</label>
+			<label></label>
+		</div>
+		
+		<div class="input-section">
+			<label>Payment Year</label>
+			<label></label>
+		</div>
+		
+		<div class="print-btn">
+			<button>Print</button>
+		</div>
+	</div>
+</div>
+</body>
+</html>
