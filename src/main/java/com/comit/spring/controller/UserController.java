@@ -1,5 +1,7 @@
 package com.comit.spring.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,15 +14,17 @@ import com.comit.spring.service.UserService;
 @Controller
 public class UserController {
 	
+	final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	UserService userService;
 	
-	@GetMapping("/")
-	String showLogin() {
-		System.out.println("Showing login form");
-		
-		return "login_form";
-	}
+//	@GetMapping("/")
+//	String showLogin() {
+//		System.out.println("Showing login form");
+//		
+//		return "login_form";
+//	}
 	
 	@GetMapping("/signup")
 	String showSignUp() {
@@ -29,9 +33,10 @@ public class UserController {
 		return "signup_form";
 	}
 	
-	@GetMapping("/home")
+	@GetMapping("/")
 	String showHome() {
-		System.out.println("Showing Home Page");
+		
+		this.logger.debug("Showing the Home Page...");
 		
 		return "home";
 	}

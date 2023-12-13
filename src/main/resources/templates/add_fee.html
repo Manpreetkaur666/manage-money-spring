@@ -10,9 +10,9 @@
 <body>
 <div th:replace="~{fragments :: header}"></div>
 <div class="content">
-	<div id="addfee">
-	<h1 class="text-center py-4">Add Fees</h1>
-	<div>
+	<div class="addfee">
+	<h1 class="py-4 px-4 border-bottom">Add Fees</h1>
+	<div class="fw-bold">
 		<form th:action="@{/addfee}" th:object="${fee}" method="post">
 		
 		
@@ -59,10 +59,7 @@
 			<label>Course</label> 
 		<div class="custom-select d-inline" style="width:200px;">
 		  <select field="*{course}" name="course" required>
-		    <option value="JAVA">JAVA</option>
-		    <option value="Javascript">Javascript</option>
-		    <option value="Pyton">Python</option>
-		    <option value="Swift">Swift</option>
+		    <option th:each="course: ${courses}" th:text="${course.courseName}" />
 		  </select>
 		</div>
 		</div>

@@ -17,11 +17,8 @@
                    <div class="report-input">
 					<label>Course</label> 
 					<div class="custom-select d-inline" style="width:200px;">
-					  <select>
-					    <option value="0">JAVA</option>
-					    <option value="1">Javascript</option>
-					    <option value="2">Python</option>
-					    <option value="3">Swift</option>
+					  <select >
+					    <option th:each="course: ${courses}" value="${course.courseId}" th:text="${course.courseName}" />
 					  </select>
 					</div>
 		         </div>

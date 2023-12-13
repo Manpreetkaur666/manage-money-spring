@@ -10,41 +10,46 @@
 <div th:replace="~{fragments :: header}"></div>
 <div class="content">
 	<div id="search">
-		<h1 class="text-center py-4">Search Record</h1>
-		<div class="search-section">
+		<h1 class="py-4 px-4 border-bottom">Search Record</h1>
+		<form th:action="@{/search}" th:object="${fee}" class="fw-bold py-4">
+			<div class="search-section">
 			<label>Enter Receipt No.</label>
-			<input></input>
-			<button>Search</button>
+			<input type="search" field="*{keyword}" th:value="${keyword}" name="keyword" />
+			<button type="submit">Search</button>
 		</div>
+		</form>
 		
+		<div class="fw-bold">
 		<div class="input-section">
 			<label>Receipt No.</label>
-			<label></label>
+			<label th:text="${fee?.receiptNo}" class="text-light-emphasis fw-medium"></label>
 		</div>
 		
 		<div class="input-section">
 			<label>Payment Mode</label>
-			<label></label>
+			<label th:text="${fee?.paymentMode}" class="text-light-emphasis fw-medium"></label>
 		</div>
 		
 		<div class="input-section">
 			<label>Date</label>
-			<label></label>
+			<label th:text="${fee?.date}" class="text-light-emphasis fw-medium"></label>
 		</div>
 		
 		<div class="input-section">
 			<label>Sender</label>
-			<label></label>
+			<label th:text="${fee?.studName}" class="text-light-emphasis fw-medium"></label>
 		</div>
 		
 		<div class="input-section">
 			<label>Course</label>
-			<label></label>
+			<label th:text="${fee?.course}" class="text-light-emphasis fw-medium"></label>
 		</div>
 		
 		<div class="input-section">
 			<label>Payment Year</label>
-			<label></label>
+			<label th:text="${fee?.paymentYearFrom}" class="text-light-emphasis fw-medium"/> - <label th:text="${fee?.paymentYearTo}" class="text-light-emphasis fw-medium" />
+		</div>
+		
 		</div>
 		
 		<div class="print-btn">

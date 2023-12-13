@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="../static/css/layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+<title>Edit Course</title>
+</head>
+<body>
+<div>
+	<div th:replace="~{fragments :: header}"></div>
+	<div class="content">
+		<div id="addfee">
+	    <h1 class="p-4 border-bottom mb-0">Edit Courses</h1>
+	    <div class="main-section d-flex justify-content-center">
+			<div class="edit-section w-100 p-0">
+				<form th:action="@{/addcourse}" th:object="${course}" method="post" class="w-100 m-0 p-4">
+					<div class="edit-input">
+					<label>Course Id</label>
+					<input type="number" field="*{courseId}" name="courseId"  placeholder="Course Id"  th:value="${course?.courseId}" required />
+				</div>
+				<div class="edit-input">
+					<label>Course Name</label>
+					<input type="text" field="*{courseName}" name="courseName" placeholder="Course Name" th:value="${course?.courseName}" required />
+				</div>
+				<div class="edit-input">
+					<label>Course Price</label>
+					<input type="number" field="*{coursePrice}" name="coursePrice" placeholder="Course Price" th:value="${course?.coursePrice}" required />
+				</div>
+				<div class="edit-options">
+					<button type="submit" class="bg-success">Add</button>
+					<button type="submit" th:formaction="@{/update}" class="bg-warning">Update</button>
+					<button type="submit" th:formaction="@{/delete/} + ${course?.courseId}" class="bg-danger">Delete</button>
+				</div>
+				</form>	
+			</div>
+			
+			<div class="list-section table-responsive w-100 vh-100 border">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+					   <th>Course Id</th>
+					   <th>Course Name</th>
+					   <th>Course Price</th>
+					   <th>Action</th>
+				   </tr>
+					</thead>
+                   <tbody>
+					   <tr th:each="course: ${courses}">
+						
+						<td th:text="${course.courseId}" />
+					   <td th:text="${course.courseName}" />
+					   <td th:text="${course.coursePrice}" />
+					   <td><a th:href="@{/update/} + ${course.courseId}">edit</a></td>
+						
+					   
+				   </tr>
+				   </tbody>
+				   
+                 </table>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>
